@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import './App.css';
 import Form from "./components/Form.js";
+import MoviesList from 
 
 
 class App extends Component {
@@ -16,12 +17,17 @@ class App extends Component {
 
   componentDidMount() {
     let promise = axios.get( baseUrl );
+
+    promise.then(( results ) => {
+      this.setState({ movies: results.data })
+    })
   }
 
 
 
 
   render() {
+    const { movies } = this.state;
     return (
     <div className="App">
 

@@ -1,11 +1,11 @@
 require("dotenv").config();
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
+// const cors = require('cors');
 const moviesController = require('./controller/movies_controller.js'); 
-// const axios = require('axios');
+const axios = require('axios');
 
-app.use(cors())
+// app.use(cors());
 
 const app = express();
 

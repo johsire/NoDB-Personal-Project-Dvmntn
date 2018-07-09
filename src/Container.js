@@ -8,7 +8,6 @@ import styled from 'styled-components';
 import Header from './components/Header.js';
 // import Form from "./components/Form.js";
 import MovieList from "./components/MovieList";
-import Comments from './components/Comments/Comments';
 
 /**
  * Component styles
@@ -41,7 +40,7 @@ class Container extends Component {
   }
 
   addComment = (comment, movie_id) => {
-    axios.post(`http://localhost:5353/api/movies/`, { comment, movie_id }).then(res => {
+    axios.post(`http://localhost:5353/api/movies/`, { comment: comment, movie_id: movie_id }).then(res => {
       this.setState({
         comments: res.data.data,
       })
@@ -82,7 +81,6 @@ class Container extends Component {
       {movies.length > 0 && (
         <Fragment>
           <Header />
-          {/* <Form /> */}
           <Wrapper>
             <MovieList
               id={movies.id}

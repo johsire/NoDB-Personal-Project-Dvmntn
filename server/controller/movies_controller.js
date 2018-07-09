@@ -1,5 +1,5 @@
 const axios = require('axios');
-const baseUrl = 'https://api.themoviedb.org/3/discover/movie?api_key=<>&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1';
+const baseUrl = 'https://api.themoviedb.org/3/discover/movie?api_key<>&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1';
 const uuidv4 = require('uuid/v4');
 
 let id = 0;
@@ -24,6 +24,8 @@ module.exports = {
   create: ( req, res ) => {
     const id = uuidv4();
     const { comment, movie_id } = req.body;
+    // req.body.comment = comment
+    // req.body.movie_id = movie_id
 
     comments.push({ id, comment, movie_id });
     res.status(200).json({

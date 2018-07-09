@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import MovieHeader from './Movie/MovieHeader';
 import MoviePoster from './Movie/MoviePoster';
 import styled from 'styled-components';

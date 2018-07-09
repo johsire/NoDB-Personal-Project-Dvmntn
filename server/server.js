@@ -1,21 +1,30 @@
 require("dotenv").config();
 const express = require('express');
 const bodyParser = require('body-parser');
-const mc = require('./controller/movies_controller.js'); 
-
+const cors = require('cors');
+const moviesController = require('./controller/movies_controller.js'); 
+// const axios = require('axios');
 
 const app = express();
 
-// app.use() --> middleware that runs for Every request
+// app.use() --> middleware that runs for Every request;
 app.use(bodyParser.json());
 
-// ======>>ENDPOINTS======>>>
-// app.get('/api/user, (req, res) => {})
-const baseURL = "/api/movies";
-//app.post( baseURL, mc.create );
-app.get( baseURL, mc.read );
-// app.put( `${baseURL}/:id`, mc.update );
-// app.delete( `${baseURL}/:id`, mc.delete );
+/** ROUTES **/
+// Get all movies
+app.get("/api/movies", moviesController.all);
+
+// Get one movie
+app.get("/api/movies/:id", moviesController.one);
+
+// Create
+app.post("/api/movies/", moviesController.create);
+
+// Update a movie
+app.put("/api/movies/:id", moviesController.update);
+
+// Delete a movie
+app.delete("/api/movies", moviesController.delete);
 
 
 const PORT = 5353;

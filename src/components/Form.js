@@ -1,17 +1,15 @@
-import React, { Component } from 'react';
-import Titles from '../components/Titles';
+// import React, { Component } from 'react';
+// import React from "react";
 
 
-class Form extends Component {
-   render() {
-     return (
-       <div>
-        <h2> This is my Form Component</h2>
-        <Titles />
-       </div>
-     )
-   }
- }
+// const Form = props => (
+    
+//     <form onSubmit = {props.getMovies}>
+        
+//     <input type="text" name="Movies" placeholder="Movies..."/>
 
- export default Form;
- 
+//     <button>Get Movies</button>
+
+// </form>
+// );
+// export default Form;

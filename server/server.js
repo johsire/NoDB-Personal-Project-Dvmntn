@@ -5,6 +5,8 @@ const cors = require('cors');
 const moviesController = require('./controller/movies_controller.js'); 
 // const axios = require('axios');
 
+app.use(cors())
+
 const app = express();
 
 // app.use() --> middleware that runs for Every request;

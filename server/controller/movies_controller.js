@@ -1,5 +1,7 @@
 const axios = require('axios');
-const baseUrl = 'https://api.themoviedb.org/3/discover/movie?api_key<>&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1';
+
+const baseUrl = 'https://api.themoviedb.org/3/discover/movie?api_key=a4d3b43c3990195c1212f27868276456&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1';
+
 const uuidv4 = require('uuid/v4');
 
 let id = 0;
@@ -54,11 +56,8 @@ module.exports = {
       comment,
       movie_id : movieId,
     }
-
     //return comments with updated comment
     res.status(200).send(comments)
-
-
   },
 
   // DELETE

@@ -26,7 +26,7 @@ const Description = styled.p`
 
 const MovieList = ({ movies, handleChange, addComment, comment, comments, updateComment, deleteComment }) => (
 	movies.map(movie => {
-		const id = new Date;
+		const id = new Date();
 		return(
 			<Wrapper key={movie.title}>
 				<MoviePoster poster={movie.poster_path} />

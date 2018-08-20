@@ -1,16 +1,17 @@
 require("dotenv").config();
 const express = require('express');
 const bodyParser = require('body-parser');
-// const cors = require('cors');
+const cors = require('cors');
 const moviesController = require('./controller/movies_controller.js'); 
 const axios = require('axios');
 
-// app.use(cors());
 
 const app = express();
 
 // app.use() --> middleware that runs for Every request;
 app.use(bodyParser.json());
+
+app.use(cors());
 
 /** ROUTES **/
 // Get all movies
